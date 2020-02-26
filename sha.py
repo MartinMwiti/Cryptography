@@ -60,7 +60,7 @@ print(hash1.digest_size)
 # hash.update(b'Python is the best')
 # print(hash.hexdigest())
 
-
+'''
 # SHAKE algorithm
 hash = hashlib.shake_256(b'Hello World!')
 # Getting specific length you want
@@ -71,3 +71,10 @@ hash2 = hashlib.shake_128(b'Hello World!')
 # Getting specific length you want
 print(hash2.digest(10))
 print(hash2.hexdigest(20))
+'''
+
+# Key derivation
+import hashlib, binascii
+hash = hashlib.pbkdf2_hmac('sha512', b'SuperSecretPassword', b'saltthepassword', 10000)
+print(binascii.hexlify(hash))
+
