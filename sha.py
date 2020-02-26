@@ -4,6 +4,7 @@ The hashlib module defines an API for accessing different cryptographic hashing 
 
 import hashlib
 
+'''
 md5 = hashlib.md5()
 print(type(md5))
 md5.update(b'Python')
@@ -15,12 +16,12 @@ sha = hashlib.sha1(b'Python').hexdigest()
 print(sha)
 
 
-'''
+
 # View all available algo in the my system
 print(hashlib.algorithms_available) 
 # view all available in the hashlib module
 print(hashlib.algorithms_guaranteed)
-'''
+
 # passed object should be in byte form
 hashed_string = hashlib.sha224(b'Hello World!')
 hex_digest = hashed_string.hexdigest()
@@ -37,3 +38,20 @@ print(hex_digest)
 hashed_string3 = hashlib.sha512(b'Hello World!')
 hex_digest = hashed_string3.hexdigest()
 print(hex_digest)
+'''
+
+# md5 accept object in byte
+hash = hashlib.md5(b'Hello Python!!!')
+hash
+print(hash.hexdigest())
+print(hash.block_size)
+print(hash.digest_size)
+
+hash1 = hashlib.sha256(b'Hello Python!!!')
+hash
+print(hash1.hexdigest())
+print(hash1.block_size)
+print(hash1.digest_size)
+
+
+# DSA HASHING ALGORITHM
