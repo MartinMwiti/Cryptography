@@ -39,7 +39,7 @@ hashed_string3 = hashlib.sha512(b'Hello World!')
 hex_digest = hashed_string3.hexdigest()
 print(hex_digest)
 '''
-
+'''
 # md5 accept object in byte
 hash = hashlib.md5(b'Hello Python!!!')
 hash
@@ -52,6 +52,22 @@ hash
 print(hash1.hexdigest())
 print(hash1.block_size)
 print(hash1.digest_size)
-
+'''
 
 # DSA HASHING ALGORITHM
+# print(hashlib.algorithms_available)
+# hash = hashlib.new('DSA')
+# hash.update(b'Python is the best')
+# print(hash.hexdigest())
+
+
+# SHAKE algorithm
+hash = hashlib.shake_256(b'Hello World!')
+# Getting specific length you want
+print(hash.digest(10))
+print(hash.hexdigest(10))
+
+hash2 = hashlib.shake_128(b'Hello World!')
+# Getting specific length you want
+print(hash2.digest(10))
+print(hash2.hexdigest(20))
