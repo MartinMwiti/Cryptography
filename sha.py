@@ -15,3 +15,25 @@ sha = hashlib.sha1(b'Python').hexdigest()
 print(sha)
 
 
+'''
+# View all available algo in the my system
+print(hashlib.algorithms_available) 
+# view all available in the hashlib module
+print(hashlib.algorithms_guaranteed)
+'''
+# passed object should be in byte form
+hashed_string = hashlib.sha224(b'Hello World!')
+hex_digest = hashed_string.hexdigest()
+print(hex_digest)
+
+digest = hashed_string.digest()
+print(digest)
+
+
+hashed_string2 = hashlib.sha256(b'Hello World!')
+hex_digest = hashed_string2.hexdigest()
+print(hex_digest)
+
+hashed_string3 = hashlib.sha512(b'Hello World!')
+hex_digest = hashed_string3.hexdigest()
+print(hex_digest)
