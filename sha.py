@@ -77,7 +77,7 @@ print(hash2.hexdigest(20))
 import hashlib, binascii
 hash = hashlib.pbkdf2_hmac('sha512', b'SuperSecretPassword', b'saltthepassword', 10000)
 print(binascii.hexlify(hash))
-'''
+
 
 # RIPEMD160
 hash = hashlib.new('ripemd160')
@@ -87,4 +87,7 @@ print(hash.digest())
 print(hash.hexdigest())
 print(hash.block_size)
 print(hash.digest_size)
+
+'''
+
 
