@@ -75,4 +75,8 @@ def paddedText(text):
 
 
 # REFERENCE
+'''
 https: // www.novixys.com/blog/using-aes-encryption-decryption-python-pycrypto/
+
+https: // docs.python.org/3/library/hashlib.html -convert a normal pass to hex then use that hex as a key for AES
+'''
