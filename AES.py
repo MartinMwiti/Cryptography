@@ -74,5 +74,5 @@ def paddedText(text):
 # print(d_data)
 
 
-
-
+# REFERENCE
+https: // www.novixys.com/blog/using-aes-encryption-decryption-python-pycrypto/
