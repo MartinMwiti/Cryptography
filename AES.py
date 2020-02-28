@@ -25,27 +25,49 @@ print("Original Message was: ", d_data)
 '''
 
 def paddedKey(key):
-    while len(key) % 8 != 0: #checks remainder 
-        key +='' # add blank spaces till the key becomes divisible by 8 i.e remainder = 0
+    while len(key) % 8 != 0:  # checks remainder # add blank spaces till the key becomes divisible by 8 i.e remainder = 0
+        key +='' 
     return key
 
 def paddedText(text):
     while len(text) % 16 != 0:
-        text += ''  # add blank spaces till the text becomes divisible by 16 i.e remainder = 0
+        text += ''  
     return text
+
 
 plain_input = input('Enter in the text to be encrypted: ')
 plain = paddedText(plain_input)
 
-key_input = input('Enter in a key between 16 and 32 characters: ')
-key = paddedKey(key_input)
 
-if (len(key_input) < 16 | len(key_input) > 32):
-    print("key must be between 16 and 32")
+def encryting_text():
+    key_input = input('Enter in a key between 16 and 32 characters: ')
+    key = paddedKey(key_input)
+    length = len(key_input)
 
-cipher = AES.new(key)
+    while (length < 16 | length > 32):
+        print("Key needs to be between 16 characters and 32 characters")
+        key_input = input('Enter in a key between 16 and 32 characters: ')
+        length = len(key_input)
+        
+        if length== 16:
+            key = paddedKey(key_input)
+            break
+               
+    return key
+
+key = encryting_text()
+#print(key)
+
+
+cipher = AES.new(key, AES.MODE_EAX)
 ciphertext = cipher.encrpt(plain)
 print(ciphertext)
+
+# Decrypt
+d_cipher = AES.new(key, AES.MODE_EAX, cipher.nonce)
+d_data = d_cipher.decrypt(ciphertext)
+print(d_data)
+
 
 
 
